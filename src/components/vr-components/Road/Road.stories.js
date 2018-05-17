@@ -6,9 +6,5 @@ import { configure, addDecorator } from '@storybook/react';
 import Road from './Road';
 
 storiesOf('Road', module)
-    .addDecorator(story => {
-        <Scene>
-            {story()}
-        </Scene>
-    })
+    .addDecorator(story => (<Scene>{story()}</Scene>))
     .add('default', () => <Road />);
