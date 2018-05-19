@@ -23,7 +23,7 @@ const DIVIDER_PROPS = {
         depth: 0.05,
     },
     material: {
-        color: 'white',
+        color: 'red',
     },
 }
 
@@ -31,7 +31,7 @@ const getDividerGroupProps = (width, size, id) => ({
     id: `dividers-${id}`,
     layout: {
         type: 'line',
-        margin: width * 3,
+        margin: width * 2,
         plane: 'x',
     },
     rotation: { x: 0, y: 90, z: 0 },

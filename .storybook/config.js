@@ -2,6 +2,7 @@ import 'babel-polyfill';
 import 'webvr-polyfill';
 import 'aframe';
 import 'aframe-extras';
+import 'aframe-layout-component';
 
 import { configure } from '@storybook/react';
 
