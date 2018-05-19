@@ -1,3 +1,8 @@
+import 'babel-polyfill';
+import 'webvr-polyfill';
+import 'aframe';
+import 'aframe-extras';
+
 import { configure } from '@storybook/react';
 
 // automatically import all files ending in *.stories.js
