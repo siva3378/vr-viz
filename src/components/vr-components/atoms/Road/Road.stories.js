@@ -1,14 +1,15 @@
 import React from 'react';
-import { Entity, Scene } from 'aframe-react';
 import { storiesOf } from '@storybook/react';
 import { configure, addDecorator } from '@storybook/react';
 import Road from './Road';
+import storybookScene from '../../storybook-scene';
+import { withKnobs, text, boolean, number, object } from '@storybook/addon-knobs';
+import { withSmartKnobs } from 'storybook-addon-smart-knobs'
 
 storiesOf('Atoms/Road', module)
-    .addDecorator(story => (<Scene>
-        <Entity position="0 2 5">
-            <Entity camera look-controls />
-        </Entity>
-        {story()}
-    </Scene>))
-    .add('size-4', () => <Road />);
+    .addDecorator(storybookScene)
+    .addDecorator(withSmartKnobs)
+    .addDecorator(withKnobs)
+    .add('with divider', () => {
+        return <Road length={number('Length', 10)} />
+    });
