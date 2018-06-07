@@ -8,8 +8,17 @@ import { withSmartKnobs } from 'storybook-addon-smart-knobs'
 
 storiesOf('Atoms/Road', module)
     .addDecorator(storybookScene)
-    .addDecorator(withSmartKnobs)
+    // .addDecorator(withSmartKnobs)
     .addDecorator(withKnobs)
     .add('with divider', () => {
-        return <Road length={number('Length', 10)} />
+        const props = {
+            objProps: {
+                length: number('Length', 10),
+            },
+            entityProps: {
+                rotation: text('Rotation (x y z)', '0 0 0'),
+                position: text('Position (x y z)', '0 0 0'),
+            }
+        }
+        return <Road {...props}/>
     });

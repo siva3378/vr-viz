@@ -19,11 +19,11 @@ const getRoadProps = (x = 0, z = 0, length, yr) => ({
 
 export const RoadGround = (props) => (<Entity {...props} />);
 
-export const Road = (props) => {
+export const Road = ({objProps, entityProps}) => {
 
-    return <Entity id="road" {...props}>
-        <RoadGround {...getRoadProps(0, 0, props.length, 0)} />
-        <Dividers length={props.length} />
+    return <Entity id="road" {...entityProps}>
+        <RoadGround {...getRoadProps(0, 0, objProps.length, 0)} />
+        <Dividers length={objProps.length} />
     </Entity>;
 }
 
